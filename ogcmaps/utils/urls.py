@@ -2,7 +2,7 @@ class urls:
 
   def __init__(self, response_format="?f=json"):
     self.format = response_format
-    self.base_url = "https://maps.ecere.com/ogcapi"
+    self.base_url = "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi"
 
     self.collections = f"/collections{self.format}"
     self.conformance = f"/conformance{self.format}"
