@@ -2,14 +2,14 @@ class urls:
 
   def __init__(self, response_format="?f=json"):
     self.format = response_format
-    self.base_url = "https://maps.ecere.com/"
+    self.base_url = "https://maps.ecere.com/ogcapi"
 
-    self.collections = f"collections{self.format}"
-    self.conformance = f"conformance{self.format}"
-    self.map = f"map{self.format}"
+    self.collections = f"/collections{self.format}"
+    self.conformance = f"/conformance{self.format}"
+    self.map = f"/map{self.format}"
 
     def base_url(self):
-      return self.base_url
+      return self.base_url + self.format
 
     def collections_url(self):
       return self.base_url + self.collections
