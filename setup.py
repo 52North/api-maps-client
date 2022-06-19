@@ -20,6 +20,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    packages=['ogcmaps', 'ogcmaps.api'],
+    packages=["ogcmaps", "ogcmaps.api"],
     python_requires=">=3.6",
 )
