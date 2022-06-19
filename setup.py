@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="ogc-maps",
+    name="ogcmaps",
     version="0.0.1",
     author="52°North",
     author_email="info@52north.org",
@@ -20,7 +20,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    packages=['ogcmaps', 'ogcmaps.api'],
     python_requires=">=3.6",
 )
