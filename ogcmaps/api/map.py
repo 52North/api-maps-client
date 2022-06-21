@@ -10,5 +10,7 @@ class core:
         self.map_urls = urls()
 
     def metadata(self):
-        self.metadata = requests.get(self.map_urls.base_url).json()
+        self.metadata = requests.get(
+            self.map_urls.base_url, headers=self.map_urls.headers
+        ).json()
         return json.dumps(self.metadata, indent=2)
