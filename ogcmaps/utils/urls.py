@@ -4,20 +4,32 @@ class urls:
     ):
         self.format = response_format
         self.headers = headers
-        self.base_url = "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi"
+        self.base_url = (
+            "https://virtserver.swaggerhub.com/UAB-CREAF/"
+            "ogc-api-maps-opf-xmp-more-1-collection/1.0.0/"
+        )
 
-        self.collections = f"/collections{self.format}"
-        self.conformance = f"/conformance{self.format}"
-        self.map = f"/map{self.format}"
+        self.collections = "collections"
+        self.conformance = "conformance"
+        self.map = "map"
 
-        def base_url(self):
-            return self.base_url + self.format
+    def core_urls(self) -> dict:
+        return {"core_url": self.base_url + self.format, "headers": self.headers}
 
-        def collections_url(self):
-            return self.base_url + self.collections
+    def collections_urls(self) -> dict:
+        return {
+            "collections_url": self.base_url + self.collections + self.format,
+            "headers": self.headers,
+        }
 
-        def conformance_url(self):
-            return self.base_url + self.conformance
+    def conformance_urls(self) -> dict:
+        return {
+            "conformance_url": self.base_url + self.conformance + self.format,
+            "headers": self.headers,
+        }
 
-        def map_url(self):
-            return self.base_url + self.map
+    def map_urls(self) -> dict:
+        return {
+            "map_url": self.base_url + self.map + self.format,
+            "headers": self.headers,
+        }
