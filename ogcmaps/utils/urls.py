@@ -7,6 +7,7 @@ class urls:
         self.collections = "collections"
         self.conformance = "conformance"
         self.map = "map"
+        self.styles = "styles"
 
     def core_urls(self) -> dict:
 
@@ -16,8 +17,11 @@ class urls:
 
         return {
             "collections_url": self.base_url + self.collections,
-            "get_collection": "{base_url}{collections}/{id}",
-            "get_collection_map": "{base_url}{collections}/{id}/map",
+            "get_collection": "{base_url}{collections}/{collection_id}",
+            "get_collection_map": "{base_url}{collections}/{collection_id}/map",
+            "get_collection_styles": "{base_url}{collections}/{collection_id}/styles",
+            "get_collection_style": "{base_url}{collections}"
+            "/{collection_id}/styles/{style_id}",
         }
 
     def conformance_urls(self) -> dict:
@@ -31,3 +35,7 @@ class urls:
         return {
             "map_url": self.base_url + self.map,
         }
+
+    def styles_urls(self) -> dict:
+
+        return {"get_styled_map": "{base_url}{styles}/{style_id}/map"}
