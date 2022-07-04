@@ -1,4 +1,5 @@
 import setuptools
+from setuptools import find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -20,6 +21,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    packages=["ogcmaps", "ogcmaps.api", "ogcmaps.utils"],
+    packages=find_packages(),
     python_requires=">=3.6",
 )

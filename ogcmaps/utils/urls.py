@@ -9,9 +9,9 @@ class urls:
         self.map = "map"
         self.styles = "styles"
 
-    def core_urls(self) -> dict:
+    def landing_urls(self) -> dict:
 
-        return {"core_url": self.base_url}
+        return {"landing_url": self.base_url}
 
     def collections_urls(self) -> dict:
 
