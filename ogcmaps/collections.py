@@ -53,6 +53,35 @@ def metadata(**kwargs) -> dict:
 
 
 def get_collection(collection_id) -> dict:
+    """Retrieve the description of a collection available from this service.
+
+    Args:
+        collection_id (str): Local identifier of a collection
+
+    Returns:
+        Information about a particular collection of (mostly geospatial) data
+        available from this API. The collection is accessible via one or more OGC
+        API set of specifications, for which a link to relevant accessible
+        resources, e.g. /collections/{collectionId}/(items, coverage, map, tiles...)
+        is contained in the response, with the corresponding relation type, as well
+        as key information about the collection. This information includes:
+
+        * A local identifier for the collection that is unique for the dataset.
+        * A list of coordinate reference systems (CRS) in which data may be returned
+        by the server. The first CRS is the default coordinate reference system (the
+        default is always WGS 84 with axis order longitude/latitude).
+        * An optional title and description for the collection.
+        * An optional extent that can be used to provide an indication of the
+        spatial and temporal extent of the collection - typically derived from the
+        data.
+        * For collections accessible via the Features or Records API, an optional
+        indicator about the type of the items in the collection (the default value, if
+        the indicator is not provided, is 'feature').
+
+
+    Raises:
+        ValueError: If parameter is invalid
+    """
 
     get_collection_url = collections_urls["get_collection"].format(
         base_url=urls().base_url,

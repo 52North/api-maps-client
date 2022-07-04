@@ -4,7 +4,7 @@ def uri(url, keys, **kwargs) -> dict:
         if key in keys:
             pass
         else:
-            return {"invalid parameter": key}
+            raise ValueError({"Invalid parameter": f"{key}"})
 
     query_string = "?" + "&".join(f"{key}={value}" for key, value in kwargs.items())
     endpoint = url + query_string
