@@ -9,7 +9,11 @@ def metadata() -> dict:
     """Retrieve the OGC API landing page for this service.
 
     Args:
-        None
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
 
     Returns:
         JSON: Links to the API definition, the conformance statements
