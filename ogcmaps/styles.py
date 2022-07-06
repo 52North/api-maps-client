@@ -1,6 +1,4 @@
-import requests
-
-from ogcmaps.utils.components import uri
+from ogcmaps.utils.components import uri, write
 from ogcmaps.utils.urls import urls
 
 styles_urls = urls().styles_urls()
@@ -118,10 +116,7 @@ def get_styled_map(style_id, file_name, **kwargs):
 
     endpoint = uri(get_styled_map_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        map_data = requests.get(endpoint["endpoint"])
-        file = open(f"{file_name}", "wb")
-        file.write(map_data.content)
-        file.close()
-        return {"status": "success", "file name": f"{file_name}"}
+        write_file = write(endpoint, file_name)
+        return write_file
 
     return endpoint

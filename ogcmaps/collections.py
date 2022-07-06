@@ -1,6 +1,6 @@
 import requests
 
-from ogcmaps.utils.components import uri
+from ogcmaps.utils.components import uri, write
 from ogcmaps.utils.urls import urls
 
 collections_urls = urls().collections_urls()
@@ -237,7 +237,7 @@ def get_collection_map(collection_id, file_name, **kwargs) -> dict:
             `Available values : png, jpg, tiff`
 
     Returns:
-        JSON: Status message and File name
+        JSON: Status message and file name
 
     Raises:
         ValueError: If parameter is invalid
@@ -247,13 +247,15 @@ def get_collection_map(collection_id, file_name, **kwargs) -> dict:
     keys = [
         "crs",
         "bbox",
+        "bbox-crs",
         "width",
         "height",
-        "cell-size",
         "transparent",
         "bgcolor",
+        "collections",
         "datetime",
-        "elevation",
+        "subset",
+        "subset-crs",
         "f",
     ]
 
@@ -264,11 +266,8 @@ def get_collection_map(collection_id, file_name, **kwargs) -> dict:
     )
     endpoint = uri(get_collection_map_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        map_data = requests.get(endpoint["endpoint"])
-        file = open(f"{file_name}", "wb")
-        file.write(map_data.content)
-        file.close()
-        return {"status": "success", "file name": f"{file_name}"}
+        write_file = write(endpoint, file_name)
+        return write_file
 
     return endpoint
 
@@ -336,7 +335,7 @@ def get_collection_style(collection_id, style_id) -> dict:
     return collection_style
 
 
-def get_collection_styled_map(collection_id, style_id, file_name, **kwargs):
+def get_collection_styled_map(collection_id, style_id, file_name, **kwargs) -> dict:
     """Retrieve a map for a specified collection and style.
 
     Args:
@@ -424,7 +423,7 @@ def get_collection_styled_map(collection_id, style_id, file_name, **kwargs):
             `Available values : png, jpg, tiff`
 
     Returns:
-        JSON: Status message and File name
+        JSON: Status message and file name
 
     Raises:
         ValueError: If parameter is invalid
@@ -433,13 +432,15 @@ def get_collection_styled_map(collection_id, style_id, file_name, **kwargs):
     keys = [
         "crs",
         "bbox",
+        "bbox-crs",
         "width",
         "height",
-        "cell-size",
         "transparent",
         "bgcolor",
+        "collections",
         "datetime",
-        "elevation",
+        "subset",
+        "subset-crs",
         "f",
     ]
 
@@ -451,16 +452,13 @@ def get_collection_styled_map(collection_id, style_id, file_name, **kwargs):
     )
     endpoint = uri(get_styled_map_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        map_data = requests.get(endpoint["endpoint"])
-        file = open(f"{file_name}", "wb")
-        file.write(map_data.content)
-        file.close()
-        return {"status": "success", "file name": f"{file_name}"}
+        write_file = write(endpoint, file_name)
+        return write_file
 
     return endpoint
 
 
-def get_collection_map_tiles(collection_id):
+def get_collection_map_tiles(collection_id) -> dict:
     """Retrieve a list of all map tilesets for specified collection.
 
     Args:
@@ -488,3 +486,117 @@ def get_collection_map_tiles(collection_id):
         get_map_tiles_url, headers=urls().json_headers
     ).json()
     return collection_map_tiles
+
+
+def get_collection_map_tile_matrix(collection_id, tile_matrix_set_id) -> dict:
+    """Retrieve a map tile set metadata for the specified collection and tiling scheme
+    (tile matrix set)
+
+    Args:
+        collection_id (str): Local identifier of a collection
+
+        tile_matrix_set_id (str): Identifier for a supported TileMatrixSet
+
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
+
+    Returns:
+        JSON: Description of the tileset.
+
+    Raises:
+        None
+    """
+
+    get_map_tile_matrix_url = collections_urls["get_collection_map_tile_matrix"].format(
+        base_url=urls().base_url,
+        collections=urls().collections,
+        collection_id=collection_id,
+        tile_matrix_set_id=tile_matrix_set_id,
+    )
+    map_tile_matrix = requests.get(
+        get_map_tile_matrix_url, headers=urls().json_headers
+    ).json()
+    return map_tile_matrix
+
+
+def get_collection_map_tile(
+    collection_id,
+    tile_matrix_set_id,
+    tile_matrix,
+    tile_row,
+    tile_col,
+    file_name,
+    **kwargs,
+) -> dict:
+    """Retrieve a map tile from the specified collection.
+
+    Args:
+        collection_id (str): Local identifier of a collection
+
+        tile_matrix_set_id (str): Identifier for a supported TileMatrixSet
+
+        tile_matrix (str): Identifier selecting one of the scales defined in the
+            TileMatrixSet and representing the scaleDenominator the tile. For example,
+            Ireland is fully within the Tile at WebMercatorQuad ``tileMatrix=5``,
+            ``tileRow=10`` and ``tileCol=15``.
+
+            `Example : 5`
+
+        tile_row (int): Row index of the tile on the selected TileMatrix. It cannot
+            exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland
+            is fully within the Tile at WebMercatorQuad ``tileMatrix=5``,
+            ``tileRow=10`` and ``tileCol=15``.
+
+            `Example : 10`
+
+        tile_col (int): Column index of the tile on the selected TileMatrix. It cannot
+            exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland
+            is fully within the Tile at WebMercatorQuad ``tileMatrix=5``, ``tileRow=10``
+            and ``tileCol=15``.
+
+            `Example : 15`
+
+        file_name (str): Name of file to save the map image
+
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
+
+    Returns:
+        JSON: Status message and file name
+
+    Raises:
+        ValueError: If parameter is invalid
+    """
+
+    keys = [
+        "crs",
+        "transparent",
+        "bgcolor",
+        "collections",
+        "datetime",
+        "subset",
+        "subset-crs",
+        "f",
+    ]
+
+    get_collection_map_tile = collections_urls["get_collection_map_tile"].format(
+        base_url=urls().base_url,
+        collections=urls().collections,
+        collection_id=collection_id,
+        tile_matrix_set_id=tile_matrix_set_id,
+        tile_matrix=tile_matrix,
+        tile_row=tile_row,
+        tile_col=tile_col,
+    )
+    endpoint = uri(get_collection_map_tile, keys, **kwargs)
+    if next(iter(endpoint)) == "endpoint":
+        write_file = write(endpoint, file_name)
+        return write_file
+
+    return endpoint
