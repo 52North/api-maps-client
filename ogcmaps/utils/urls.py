@@ -22,6 +22,10 @@ class urls:
             "get_collection_styles": "{base_url}{collections}/{collection_id}/styles",
             "get_collection_style": "{base_url}{collections}"
             "/{collection_id}/styles/{style_id}",
+            "get_collection_styled_map": "{base_url}{collections}"
+            "/{collection_id}/styles/{style_id}/map",
+            "get_collection_map_tiles": "{base_url}{collections}"
+            "/{collection_id}/map/tiles",
         }
 
     def conformance_urls(self) -> dict:
