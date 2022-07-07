@@ -561,11 +561,10 @@ def get_collection_map_tile(
 
         file_name (str): Name of file to save the map image
 
-        f (str, optional): The format of the response. If no value is provided, the
-            accept header is used to determine the format. Accepted values are 'json' or
-            'html'.
+        f (str, optional): The format of the map response (e.g. png). Accepted values
+            are 'png', 'jpg' or 'tiff' (GeoTIFF).
 
-            `Available values : json, html`
+            `Available values : png, jpg, tiff`
 
     Returns:
         JSON: Status message and file name
@@ -684,5 +683,91 @@ def collection_styled_map_tile_matrix(
             endpoint["endpoint"], headers=urls().json_headers
         ).json()
         return get_styled_map_tile_matrix
+
+    return endpoint
+
+
+def get_collection_styled_map_tile(
+    collection_id,
+    style_id,
+    tile_matrix_set_id,
+    tile_matrix,
+    tile_row,
+    tile_col,
+    file_name,
+    **kwargs,
+) -> dict:
+    """Retrieve a map tile for a specified collection and style
+
+    Args:
+        collection_id (str): Local identifier of a collection
+
+        style_id (str): An identifier representing a specific style
+
+        tile_matrix_set_id (str): Identifier for a supported TileMatrixSet
+
+        tile_matrix (str): Identifier selecting one of the scales defined in the
+            TileMatrixSet and representing the scaleDenominator the tile. For example,
+            Ireland is fully within the Tile at WebMercatorQuad ``tileMatrix=5``,
+            ``tileRow=10`` and ``tileCol=15``.
+
+            `Example : 5`
+
+        tile_row (int): Row index of the tile on the selected TileMatrix. It cannot
+            exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland
+            is fully within the Tile at WebMercatorQuad ``tileMatrix=5``,
+            ``tileRow=10`` and ``tileCol=15``.
+
+            `Example : 10`
+
+        tile_col (int): Column index of the tile on the selected TileMatrix. It cannot
+            exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland
+            is fully within the Tile at WebMercatorQuad ``tileMatrix=5``, ``tileRow=10``
+            and ``tileCol=15``.
+
+            `Example : 15`
+
+        file_name (str): Name of file to save the map image
+
+        f (str, optional): The format of the map response (e.g. png). Accepted values
+            are 'png', 'jpg' or 'tiff' (GeoTIFF).
+
+            `Available values : png, jpg, tiff`
+
+    Returns:
+        JSON: Status message and file name
+
+    Raises:
+        ValueError: If parameter is invalid
+
+    """
+
+    keys = [
+        "crs",
+        "transparent",
+        "bgcolor",
+        "collections",
+        "datetime",
+        "subset",
+        "subset-crs",
+        "f",
+    ]
+
+    get_collection_styled_map_tile = collections_urls[
+        "collection_styled_map_tile"
+    ].format(
+        base_url=urls().base_url,
+        collections=urls().collections,
+        collection_id=collection_id,
+        style_id=style_id,
+        tile_matrix_set_id=tile_matrix_set_id,
+        tile_matrix=tile_matrix,
+        tile_row=tile_row,
+        tile_col=tile_col,
+    )
+    endpoint = uri(get_collection_styled_map_tile, keys, **kwargs)
+    if next(iter(endpoint)) == "endpoint":
+        write_file = write(endpoint, file_name)
+        return write_file
 
     return endpoint

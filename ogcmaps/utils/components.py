@@ -17,7 +17,7 @@ def uri(url, keys, **kwargs) -> dict:
 
 def write(endpoint, file_name) -> dict:
 
-    map_data = requests.get(endpoint["endpoint"])
+    map_data = requests.get(endpoint["endpoint"], headers={"accept": "image/png"})
     file = open(f"{file_name}", "wb")
     file.write(map_data.content)
     file.close()

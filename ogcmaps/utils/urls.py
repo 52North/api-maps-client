@@ -2,7 +2,7 @@ class urls:
     def __init__(self):
 
         self.json_headers = {"accept": "application/json"}
-        self.base_url = "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/"
+        self.base_url = "https://maps.ecere.com/ogcapi/"
 
         self.collections = "collections"
         self.conformance = "conformance"
@@ -29,12 +29,15 @@ class urls:
             "get_collection_map_tile_matrix": "{base_url}{collections}"
             "/{collection_id}/map/tiles/{tile_matrix_set_id}",
             "get_collection_map_tile": "{base_url}{collections}"
-            "/{collection_id}/map/tiles/{tile_matrix_set_id}/{tile_matrix}"
+            "/{collection_id}/map/tiles/{tile_matrix_set_id}/{tile_matrix}/"
             "{tile_row}/{tile_col}",
             "get_collection_styled_tiles": "{base_url}{collections}"
             "/{collection_id}/styles/{style_id}/map/tiles",
             "collection_styled_map_tile_matrix": "{base_url}{collections}"
             "/{collection_id}/styles/{style_id}/map/tiles/{tile_matrix_set_id}",
+            "collection_styled_map_tile": "{base_url}{collections}"
+            "/{collection_id}/styles/{style_id}/map/tiles/{tile_matrix_set_id}/"
+            "{tile_matrix}/{tile_row}/{tile_col}",
         }
 
     def conformance_urls(self) -> dict:
@@ -51,4 +54,9 @@ class urls:
 
     def styles_urls(self) -> dict:
 
-        return {"get_styled_map": "{base_url}{styles}/{style_id}/map"}
+        return {
+            "get_styled_map": "{base_url}{styles}/{style_id}/map",
+            "get_styled_map_tiles": "{base_url}{styles}/{style_id}/map/tiles",
+            "get_styled_map_tiles_matrix": "{base_url}{styles}/{style_id}/map/tiles/"
+            "{tile_matrix_set_id}",
+        }

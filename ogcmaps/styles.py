@@ -1,10 +1,12 @@
+import requests
+
 from ogcmaps.utils.components import uri, write
 from ogcmaps.utils.urls import urls
 
 styles_urls = urls().styles_urls()
 
 
-def get_styled_map(style_id, file_name, **kwargs):
+def get_styled_map(style_id, file_name, **kwargs) -> dict:
     """Retrieve a styled map of the whole dataset.
 
     Args:
@@ -118,5 +120,75 @@ def get_styled_map(style_id, file_name, **kwargs):
     if next(iter(endpoint)) == "endpoint":
         write_file = write(endpoint, file_name)
         return write_file
+
+    return endpoint
+
+
+def get_styled_map_tiles(style_id) -> dict:
+    """Retrieve the list of styled map tilesets for the whole dataset
+
+    Args:
+        style_id (str): An identifier representing a specific style.
+
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
+
+    Returns:
+        JSON: List of available tilesets
+
+    Raises:
+        None
+    """
+
+    get_styled_map_tiles_url = styles_urls["get_styled_map_tiles"].format(
+        base_url=urls().base_url, styles=urls().styles, style_id=style_id
+    )
+
+    styled_map_tiles = requests.get(
+        get_styled_map_tiles_url,
+        headers=urls().json_headers,
+    ).json()
+    return styled_map_tiles
+
+
+def styled_map_tiles_matrix(style_id, tile_matrix_set_id, **kwargs) -> dict:
+    """Retrieve a styled map tileset of the whole dataset for the specified tiling
+    scheme (tile matrix set)
+
+    Args:
+        style_id (str): An identifier representing a specific style
+
+        tile_matrix_set_id (str): Identifier for a supported TileMatrixSet
+
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
+
+    Returns:
+        JSON: Description of the tileset
+
+    Raises:
+        None
+    """
+
+    keys = ["collections", "f"]
+
+    styled_map_tiles_matrix_url = styles_urls["get_styled_map_tiles_matrix"].format(
+        base_url=urls().base_url,
+        collections=urls().collections,
+        style_id=style_id,
+        tile_matrix_set_id=tile_matrix_set_id,
+    )
+    endpoint = uri(styled_map_tiles_matrix_url, keys, **kwargs)
+    if next(iter(endpoint)) == "endpoint":
+        styled_tiles_matrix = requests.get(
+            endpoint["endpoint"], headers=urls().json_headers
+        ).json()
+        return styled_tiles_matrix
 
     return endpoint
