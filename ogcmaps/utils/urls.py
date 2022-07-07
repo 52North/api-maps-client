@@ -31,6 +31,10 @@ class urls:
             "get_collection_map_tile": "{base_url}{collections}"
             "/{collection_id}/map/tiles/{tile_matrix_set_id}/{tile_matrix}"
             "{tile_row}/{tile_col}",
+            "get_collection_styled_tiles": "{base_url}{collections}"
+            "/{collection_id}/styles/{style_id}/map/tiles",
+            "collection_styled_map_tile_matrix": "{base_url}{collections}"
+            "/{collection_id}/styles/{style_id}/map/tiles/{tile_matrix_set_id}",
         }
 
     def conformance_urls(self) -> dict:

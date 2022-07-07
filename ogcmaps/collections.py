@@ -600,3 +600,89 @@ def get_collection_map_tile(
         return write_file
 
     return endpoint
+
+
+def get_collection_styled_tiles(collection_id, style_id) -> dict:
+    """Retrieve a list of styled map tilesets for the specified collection
+
+    Args:
+        collection_id (str): Local identifier of a collection
+
+        style_id (str): An identifier representing a specific style
+
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
+
+    Returns:
+        JSON: List of available tilesets
+
+    Raises:
+        None
+    """
+
+    get_styled_tiles_url = collections_urls["get_collection_styled_tiles"].format(
+        base_url=urls().base_url,
+        collections=urls().collections,
+        collection_id=collection_id,
+        style_id=style_id,
+    )
+    styled_tiles = requests.get(
+        get_styled_tiles_url, headers=urls().json_headers
+    ).json()
+    return styled_tiles
+
+
+def collection_styled_map_tile_matrix(
+    collection_id, style_id, tile_matrix_set_id, **kwargs
+) -> dict:
+    """Retrieve the map tileset metadata for the specified collection, style and tiling
+    scheme (tile matrix set).
+
+    Args:
+        collection_id (str): Local identifier of a collection
+
+        style_id (str): An identifier representing a specific style
+
+        tile_matrix_set_id (str): Identifier for a supported TileMatrixSet
+
+        collections (array[str], optional): The collections that should be included in
+            the response. The parameter value is a comma-separated list of collection
+            identifiers. If the parameters is missing, some or all collections will be
+            included. The collection will be rendered in the order specified, with the
+            last one showing on top, unless the priority is overridden by styling rules.
+
+        f (str, optional): The format of the response. If no value is provided, the
+            accept header is used to determine the format. Accepted values are 'json' or
+            'html'.
+
+            `Available values : json, html`
+
+    Returns:
+        JSON: Description of the tileset
+
+    Raises:
+        None
+    """
+
+    keys = ["collections", "f"]
+
+    styled_map_tile_matrix_url = collections_urls[
+        "collection_styled_map_tile_matrix"
+    ].format(
+        base_url=urls().base_url,
+        collections=urls().collections,
+        collection_id=collection_id,
+        tile_matrix_set_id=tile_matrix_set_id,
+        style_id=style_id,
+    )
+    endpoint = uri(styled_map_tile_matrix_url, keys, **kwargs)
+    if next(iter(endpoint)) == "endpoint":
+        get_styled_map_tile_matrix = requests.get(
+            endpoint["endpoint"], headers=urls().json_headers
+        ).json()
+        return get_styled_map_tile_matrix
+
+    return endpoint
