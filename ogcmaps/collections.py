@@ -561,6 +561,43 @@ def get_collection_map_tile(
 
         file_name (str): Name of file to save the map image
 
+        datetime (str, optional):Either a date-time or an interval, half-bounded or
+            bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+            intervals are expressed using double-dots.
+
+            Examples:
+
+            * A date-time: "2018-02-12T23:20:50Z"
+            * A bounded interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+            * Half-bounded intervals: "2018-02-12T00:00:00Z/.." or "../
+              2018-03-18T12:31:12Z"
+
+        collections (array[str], optional): The collections that should be included in
+            the response. The parameter value is a comma-separated list of collection
+            identifiers. If the parameters is missing, some or all collections will be
+            included. The collection will be rendered in the order specified, with the
+            last one showing on top, unless the priority is overridden by styling rules.
+
+        subset (array[str], optional): Retrieve only part of the data by slicing or
+            trimming along one or more axis For trimming: ``{axisAbbrev}({low}:{high})``
+            (preserves dimensionality) An asterisk ``(*)`` can be used instead of
+            ``{low}`` or ``{high}`` to indicate the minimum/maximum value. For
+            slicing: ``{axisAbbrev}({value})`` (reduces dimensionality).
+
+        crs (str, optional): Reproject the output to the given crs
+
+        subset-crs (str, optional): Crs for the specified subset
+
+        bgcolor (str, optional): Web color name or hexadecimal `0x[AA]RRGGBB` color
+            value for the background color (default to `0x9C9C9C` gray). If alpha is not
+            specified, full opacity is assumed.
+
+            `Default value : 0xFFFFFF`
+
+        transparent (boolean, optional): Background transparency of map (default=true).
+
+            `Default value : true`
+
         f (str, optional): The format of the map response (e.g. png). Accepted values
             are 'png', 'jpg' or 'tiff' (GeoTIFF).
 
@@ -728,6 +765,43 @@ def get_collection_styled_map_tile(
             `Example : 15`
 
         file_name (str): Name of file to save the map image
+
+        datetime (str, optional):Either a date-time or an interval, half-bounded or
+            bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+            intervals are expressed using double-dots.
+
+            Examples:
+
+            * A date-time: "2018-02-12T23:20:50Z"
+            * A bounded interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+            * Half-bounded intervals: "2018-02-12T00:00:00Z/.." or "../
+              2018-03-18T12:31:12Z"
+
+        collections (array[str], optional): The collections that should be included in
+            the response. The parameter value is a comma-separated list of collection
+            identifiers. If the parameters is missing, some or all collections will be
+            included. The collection will be rendered in the order specified, with the
+            last one showing on top, unless the priority is overridden by styling rules.
+
+        subset (array[str], optional): Retrieve only part of the data by slicing or
+            trimming along one or more axis For trimming: ``{axisAbbrev}({low}:{high})``
+            (preserves dimensionality) An asterisk ``(*)`` can be used instead of
+            ``{low}`` or ``{high}`` to indicate the minimum/maximum value. For
+            slicing: ``{axisAbbrev}({value})`` (reduces dimensionality).
+
+        crs (str, optional): Reproject the output to the given crs
+
+        subset-crs (str, optional): Crs for the specified subset
+
+        bgcolor (str, optional): Web color name or hexadecimal `0x[AA]RRGGBB` color
+            value for the background color (default to `0x9C9C9C` gray). If alpha is not
+            specified, full opacity is assumed.
+
+            `Default value : 0xFFFFFF`
+
+        transparent (boolean, optional): Background transparency of map (default=true).
+
+            `Default value : true`
 
         f (str, optional): The format of the map response (e.g. png). Accepted values
             are 'png', 'jpg' or 'tiff' (GeoTIFF).

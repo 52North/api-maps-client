@@ -59,4 +59,6 @@ class urls:
             "get_styled_map_tiles": "{base_url}{styles}/{style_id}/map/tiles",
             "get_styled_map_tiles_matrix": "{base_url}{styles}/{style_id}/map/tiles/"
             "{tile_matrix_set_id}",
+            "get_styled_map_tile": "{base_url}{styles}/{style_id}/map/tiles/"
+            "{tile_matrix_set_id}/{tile_matrix}/{tile_row}/{tile_col}",
         }
