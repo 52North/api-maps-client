@@ -1,8 +1,7 @@
 class urls:
     def __init__(self):
 
-        self.json_headers = {"accept": "application/json"}
-        self.base_url = "https://maps.ecere.com/ogcapi/"
+        self.base_url = "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/"
 
         self.collections = "collections"
         self.conformance = "conformance"
@@ -50,6 +49,10 @@ class urls:
 
         return {
             "map_url": self.base_url + self.map,
+            "get_map_tiles": self.base_url + self.map + "/tiles",
+            "map_tile_matrix_set": "{base_url}{map}/tiles/{tile_matrix_set_id}",
+            "get_map_tile": "{base_url}{map}/tiles/{tile_matrix_set_id}"
+            "/{tile_matrix}/{tile_row}/{tile_col}",
         }
 
     def styles_urls(self) -> dict:

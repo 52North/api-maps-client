@@ -690,7 +690,7 @@ def collection_styled_map_tile_matrix(
         JSON: Description of the tileset
 
     Raises:
-        None
+        ValueError: If parameter is invalid
     """
 
     keys = ["collections", "f"]
