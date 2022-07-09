@@ -1,11 +1,10 @@
-import requests
-
+from ogcmaps.utils.components import get_data
 from ogcmaps.utils.urls import urls
 
 conformance_urls = urls().conformance_urls()
 
 
-def metadata() -> dict:
+def metadata(f="json") -> dict:
     """Retrieve the set of OGC API conformance classes that are supported by this
     service.
 
@@ -24,8 +23,5 @@ def metadata() -> dict:
 
     """
 
-    conformance_data = requests.get(
-        conformance_urls["conformance_url"],
-        headers=urls().json_headers,
-    ).json()
-    return conformance_data
+    data = get_data(conformance_urls["conformance_url"], f)
+    return data

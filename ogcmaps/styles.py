@@ -1,12 +1,10 @@
-import requests
-
-from ogcmaps.utils.components import uri, write
+from ogcmaps.utils.components import get_data, uri, write_image
 from ogcmaps.utils.urls import urls
 
 styles_urls = urls().styles_urls()
 
 
-def get_styled_map(style_id, file_name, **kwargs) -> dict:
+def get_styled_map(style_id, file_name, f="png", **kwargs) -> dict:
     """Retrieve a styled map of the whole dataset.
 
     Args:
@@ -118,13 +116,13 @@ def get_styled_map(style_id, file_name, **kwargs) -> dict:
 
     endpoint = uri(get_styled_map_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        write_file = write(endpoint, file_name)
+        write_file = write_image(endpoint, file_name, f)
         return write_file
 
     return endpoint
 
 
-def get_styled_map_tiles(style_id) -> dict:
+def get_styled_map_tiles(style_id, f="json") -> dict:
     """Retrieve the list of styled map tilesets for the whole dataset
 
     Args:
@@ -147,14 +145,11 @@ def get_styled_map_tiles(style_id) -> dict:
         base_url=urls().base_url, styles=urls().styles, style_id=style_id
     )
 
-    styled_map_tiles = requests.get(
-        get_styled_map_tiles_url,
-        headers=urls().json_headers,
-    ).json()
-    return styled_map_tiles
+    data = get_data(get_styled_map_tiles_url, f)
+    return data
 
 
-def styled_map_tiles_matrix(style_id, tile_matrix_set_id, **kwargs) -> dict:
+def styled_map_tiles_matrix(style_id, tile_matrix_set_id, f="json", **kwargs) -> dict:
     """Retrieve a styled map tileset of the whole dataset for the specified tiling
     scheme (tile matrix set)
 
@@ -192,10 +187,8 @@ def styled_map_tiles_matrix(style_id, tile_matrix_set_id, **kwargs) -> dict:
     )
     endpoint = uri(styled_map_tiles_matrix_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        styled_tiles_matrix = requests.get(
-            endpoint["endpoint"], headers=urls().json_headers
-        ).json()
-        return styled_tiles_matrix
+        data = get_data(endpoint["endpoint"], f)
+        return data
 
     return endpoint
 
@@ -207,6 +200,7 @@ def get_styled_map_tile(
     tile_row,
     tile_col,
     file_name,
+    f="png",
     **kwargs,
 ):
     """Retrieve a styled map tiles
@@ -311,7 +305,7 @@ def get_styled_map_tile(
 
     endpoint = uri(get_styled_map_tile_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        write_file = write(endpoint, file_name)
+        write_file = write_image(endpoint, file_name, f)
         return write_file
 
     return endpoint

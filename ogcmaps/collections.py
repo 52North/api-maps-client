@@ -1,12 +1,10 @@
-import requests
-
-from ogcmaps.utils.components import uri, write
+from ogcmaps.utils.components import get_data, uri, write_image
 from ogcmaps.utils.urls import urls
 
 collections_urls = urls().collections_urls()
 
 
-def metadata(**kwargs) -> dict:
+def metadata(f="json", **kwargs) -> dict:
     """Retrieve the list of geospatial data collections available from this service.
 
     Args:
@@ -95,15 +93,13 @@ def metadata(**kwargs) -> dict:
     get_collection_url = collections_urls["collections_url"]
     endpoint = uri(get_collection_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        get_collections = requests.get(
-            endpoint["endpoint"], headers=urls().json_headers
-        ).json()
-        return get_collections
+        data = get_data(endpoint["endpoint"], f)
+        return data
 
     return endpoint
 
 
-def get_collection(collection_id) -> dict:
+def get_collection(collection_id, f="json") -> dict:
     """Retrieve the description of a collection available from this service.
 
     Args:
@@ -145,13 +141,12 @@ def get_collection(collection_id) -> dict:
         collections=urls().collections,
         collection_id=collection_id,
     )
-    get_collection_data = requests.get(
-        get_collection_url, headers=urls().json_headers
-    ).json()
-    return get_collection_data
+
+    data = get_data(get_collection_url, f)
+    return data
 
 
-def get_collection_map(collection_id, file_name, **kwargs) -> dict:
+def get_collection_map(collection_id, file_name, f="png", **kwargs) -> dict:
     """Retrieve a map for the specified collection.
 
     Args:
@@ -266,13 +261,13 @@ def get_collection_map(collection_id, file_name, **kwargs) -> dict:
     )
     endpoint = uri(get_collection_map_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        write_file = write(endpoint, file_name)
+        write_file = write_image(endpoint, file_name, f)
         return write_file
 
     return endpoint
 
 
-def get_collection_styles(collection_id) -> dict:
+def get_collection_styles(collection_id, f="json") -> dict:
     """Retrieve the list of all styles for a particular collection.
 
     Args:
@@ -296,13 +291,11 @@ def get_collection_styles(collection_id) -> dict:
         collections=urls().collections,
         collection_id=collection_id,
     )
-    collection_styles = requests.get(
-        get_collection_styles_url, headers=urls().json_headers
-    ).json()
-    return collection_styles
+    data = get_data(get_collection_styles_url, f)
+    return data
 
 
-def get_collection_style(collection_id, style_id) -> dict:
+def get_collection_style(collection_id, style_id, f="json") -> dict:
     """Retrieve the style data for a style in a collection.
 
     Args:
@@ -329,13 +322,14 @@ def get_collection_style(collection_id, style_id) -> dict:
         collection_id=collection_id,
         style_id=style_id,
     )
-    collection_style = requests.get(
-        get_collection_style_url, headers=urls().json_headers
-    ).json()
-    return collection_style
+
+    data = get_data(get_collection_style_url, f)
+    return data
 
 
-def get_collection_styled_map(collection_id, style_id, file_name, **kwargs) -> dict:
+def get_collection_styled_map(
+    collection_id, style_id, file_name, f="png", **kwargs
+) -> dict:
     """Retrieve a map for a specified collection and style.
 
     Args:
@@ -452,13 +446,13 @@ def get_collection_styled_map(collection_id, style_id, file_name, **kwargs) -> d
     )
     endpoint = uri(get_styled_map_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        write_file = write(endpoint, file_name)
+        write_file = write_image(endpoint, file_name, f)
         return write_file
 
     return endpoint
 
 
-def get_collection_map_tiles(collection_id) -> dict:
+def get_collection_map_tiles(collection_id, f="json") -> dict:
     """Retrieve a list of all map tilesets for specified collection.
 
     Args:
@@ -482,13 +476,12 @@ def get_collection_map_tiles(collection_id) -> dict:
         collections=urls().collections,
         collection_id=collection_id,
     )
-    collection_map_tiles = requests.get(
-        get_map_tiles_url, headers=urls().json_headers
-    ).json()
-    return collection_map_tiles
+
+    data = get_data(get_map_tiles_url, f)
+    return data
 
 
-def get_collection_map_tile_matrix(collection_id, tile_matrix_set_id) -> dict:
+def get_collection_map_tile_matrix(collection_id, tile_matrix_set_id, f="json") -> dict:
     """Retrieve a map tile set metadata for the specified collection and tiling scheme
     (tile matrix set)
 
@@ -516,10 +509,8 @@ def get_collection_map_tile_matrix(collection_id, tile_matrix_set_id) -> dict:
         collection_id=collection_id,
         tile_matrix_set_id=tile_matrix_set_id,
     )
-    map_tile_matrix = requests.get(
-        get_map_tile_matrix_url, headers=urls().json_headers
-    ).json()
-    return map_tile_matrix
+    data = get_data(get_map_tile_matrix_url, f)
+    return data
 
 
 def get_collection_map_tile(
@@ -529,6 +520,7 @@ def get_collection_map_tile(
     tile_row,
     tile_col,
     file_name,
+    f="png",
     **kwargs,
 ) -> dict:
     """Retrieve a map tile from the specified collection.
@@ -632,13 +624,13 @@ def get_collection_map_tile(
     )
     endpoint = uri(get_collection_map_tile, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        write_file = write(endpoint, file_name)
+        write_file = write_image(endpoint, file_name, f)
         return write_file
 
     return endpoint
 
 
-def get_collection_styled_tiles(collection_id, style_id) -> dict:
+def get_collection_styled_tiles(collection_id, style_id, f="json") -> dict:
     """Retrieve a list of styled map tilesets for the specified collection
 
     Args:
@@ -665,14 +657,12 @@ def get_collection_styled_tiles(collection_id, style_id) -> dict:
         collection_id=collection_id,
         style_id=style_id,
     )
-    styled_tiles = requests.get(
-        get_styled_tiles_url, headers=urls().json_headers
-    ).json()
-    return styled_tiles
+    data = get_data(get_styled_tiles_url, f)
+    return data
 
 
 def collection_styled_map_tile_matrix(
-    collection_id, style_id, tile_matrix_set_id, **kwargs
+    collection_id, style_id, tile_matrix_set_id, f="json", **kwargs
 ) -> dict:
     """Retrieve the map tileset metadata for the specified collection, style and tiling
     scheme (tile matrix set).
@@ -716,10 +706,8 @@ def collection_styled_map_tile_matrix(
     )
     endpoint = uri(styled_map_tile_matrix_url, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        get_styled_map_tile_matrix = requests.get(
-            endpoint["endpoint"], headers=urls().json_headers
-        ).json()
-        return get_styled_map_tile_matrix
+        data = get_data(endpoint["endpoint"], f)
+        return data
 
     return endpoint
 
@@ -732,6 +720,7 @@ def get_collection_styled_map_tile(
     tile_row,
     tile_col,
     file_name,
+    f="png",
     **kwargs,
 ) -> dict:
     """Retrieve a map tile for a specified collection and style
@@ -841,7 +830,7 @@ def get_collection_styled_map_tile(
     )
     endpoint = uri(get_collection_styled_map_tile, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":
-        write_file = write(endpoint, file_name)
+        write_file = write_image(endpoint, file_name, f)
         return write_file
 
     return endpoint

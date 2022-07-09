@@ -15,11 +15,27 @@ def uri(url, keys, **kwargs) -> dict:
     return {"endpoint": endpoint}
 
 
-def write(endpoint, file_name) -> dict:
+def write_image(endpoint, file_name, f) -> dict:
 
-    map_data = requests.get(endpoint["endpoint"], headers={"accept": "image/png"})
+    map_data = requests.get(endpoint["endpoint"], headers={"accept": f"image/{f}"})
     file = open(f"{file_name}", "wb")
     file.write(map_data.content)
     file.close()
 
     return {"status": "success", "file name": f"{file_name}"}
+
+
+def get_data(endpoint, response_format):
+
+    if response_format == "json":
+        raw_data = requests.get(
+            endpoint, headers={"accept": f"application/{response_format}"}
+        )
+        return raw_data.json()
+
+    elif response_format == "html":
+        html_endpoint = (
+            endpoint + "&f=html" if ("?" in endpoint) else endpoint + "?f=html"
+        )
+        raw_data = requests.get(html_endpoint)
+        return raw_data.text

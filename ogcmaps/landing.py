@@ -1,11 +1,10 @@
-import requests
-
+from ogcmaps.utils.components import get_data
 from ogcmaps.utils.urls import urls
 
 landing_urls = urls().landing_urls()
 
 
-def metadata() -> dict:
+def metadata(f="json") -> dict:
     """Retrieve the OGC API landing page for this service.
 
     Args:
@@ -24,7 +23,5 @@ def metadata() -> dict:
 
     """
 
-    landing_data = requests.get(
-        landing_urls["landing_url"], headers=urls().json_headers
-    ).json()
-    return landing_data
+    data = get_data(landing_urls["landing_url"], f)
+    return data
