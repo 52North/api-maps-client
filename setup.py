@@ -21,6 +21,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    packages=find_packages(),
+    packages=find_packages(exclude=["tests.*", "tests", "docs.*", "docs"]),
+    install_requires=["requests_cache", "click", "requests"],
     python_requires=">=3.6",
+    entry_points={"console_scripts": ["ogcmaps=ogcmaps.cli:cli"]},
 )

@@ -1,7 +1,7 @@
 class urls:
     def __init__(self):
 
-        self.base_url = "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/"
+        self.base_url = "https://maps.ecere.com/ogcapi/"
 
         self.collections = "collections"
         self.conformance = "conformance"
