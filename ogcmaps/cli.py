@@ -16,7 +16,7 @@ pass_context = click.make_pass_decorator(Context, ensure=True)
 
 class OGCmapsCLI(click.MultiCommand):
     def list_commands(self, ctx):
-        rv = get_funcs(["collections", "conformance", "map", "styles", "landing"])
+        rv = get_funcs(["collections", "conformance", "maps", "styles", "landing"])
         rv.sort()
         return rv
 

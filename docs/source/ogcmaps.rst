@@ -36,10 +36,10 @@ ogcmaps.landing module
    :undoc-members:
    :show-inheritance:
 
-ogcmaps.map module
-------------------
+ogcmaps.maps module
+-------------------
 
-.. automodule:: ogcmaps.map
+.. automodule:: ogcmaps.maps
    :members:
    :undoc-members:
    :show-inheritance:
