@@ -3,6 +3,7 @@ import click
 from ogcmaps import collections as collections_obj
 from ogcmaps import conformance as conformance_obj
 from ogcmaps import landing as landing_obj
+from ogcmaps import maps as maps_obj
 from ogcmaps import styles as styles_obj
 from ogcmaps.utils.components import parse_options, printer
 
@@ -716,5 +717,21 @@ def styled_map_tiles_matrix(
             styles_obj.styled_map_tiles_matrix(
                 style_id=style_id, tile_matrix_set_id=tile_matrix_set_id, f=f, **options
             ),
+        )
+    )
+
+
+@click.command(
+    "get_map",
+    short_help="Retrieve a default map of the whole dataset.",
+)
+@click.option("--file_name", required=True, help="Name of file to save the map image.")
+@click.pass_context
+def get_map(ctx, file_name):
+
+    click.echo(
+        printer(
+            ctx,
+            maps_obj.get_map(file_name=file_name),
         )
     )
