@@ -159,10 +159,10 @@ def styled_map_tiles_matrix(style_id, tile_matrix_set_id, f="json", **kwargs) ->
         tile_matrix_set_id (str): Identifier for a supported TileMatrixSet
 
         collections (array[str]): The collections that should be included in the
-        response. The parameter value is a comma-separated list of collection
-        identifiers. If the parameters is missing, some or all collections will be
-        included. The collection will be rendered in the order specified, with the last
-        one showing on top, unless the priority is overridden by styling rules.
+            response. The parameter value is a comma-separated list of collection
+            identifiers. If the parameters is missing, some or all collections will be
+            included. The collection will be rendered in the order specified, with the
+            last one showing on top, unless the priority is overridden by styling rules.
 
         f (str, optional): The format of the response. If no value is provided, the
             accept header is used to determine the format. Accepted values are 'json' or
