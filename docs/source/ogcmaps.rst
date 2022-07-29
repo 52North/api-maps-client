@@ -4,6 +4,14 @@ ogcmaps package
 Submodules
 ----------
 
+ogcmaps.cli module
+------------------
+
+.. automodule:: ogcmaps.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 ogcmaps.collections module
 --------------------------
 
@@ -24,6 +32,14 @@ ogcmaps.landing module
 ----------------------
 
 .. automodule:: ogcmaps.landing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ogcmaps.map module
+------------------
+
+.. automodule:: ogcmaps.map
    :members:
    :undoc-members:
    :show-inheritance:
