@@ -748,3 +748,117 @@ def get_map(ctx, file_name, f):
             maps_obj.get_map(file_name=file_name, f=f, **options),
         )
     )
+
+
+@click.command(
+    "get_map_tile",
+    short_help="Retrieve a default map tile of the whole dataset.",
+    context_settings=dict(
+        ignore_unknown_options=True,
+        allow_extra_args=True,
+    ),
+)
+@click.option("--file_name", required=True, help="Name of file to save the map image.")
+@click.option(
+    "--tile_matrix_set_id",
+    required=True,
+    help=("Identifier for a supported" "TileMatrixSet"),
+)
+@click.option(
+    "--tile_matrix",
+    required=True,
+    help=("Identifier selecting one of the scales" "defined in the TileMatrixSet"),
+)
+@click.option(
+    "--tile_row",
+    required=True,
+    help=("Row index of the tile on the " "selected TileMatrix."),
+)
+@click.option(
+    "--tile_col",
+    required=True,
+    help=("Column index of the tile on the " "selected TileMatrix."),
+)
+@click.option(
+    "-f",
+    default="png",
+    help=(
+        "The format of the map response (e.g. png). Accepted values "
+        "are 'png', 'jpg' or 'tiff' (GeoTIFF)."
+    ),
+)
+@click.pass_context
+def get_map_tile(
+    ctx, tile_matrix_set_id, tile_matrix, tile_row, tile_col, file_name, f
+):
+
+    options = parse_options(ctx)
+    click.echo(
+        printer(
+            ctx,
+            maps_obj.get_map_tile(
+                tile_matrix_set_id=tile_matrix_set_id,
+                tile_matrix=tile_matrix,
+                tile_row=tile_row,
+                tile_col=tile_col,
+                file_name=file_name,
+                f=f,
+                **options
+            ),
+        )
+    )
+
+
+@click.command(
+    "get_map_tile_matrix_set",
+    short_help=(
+        "Retrieve a default map tileset of the whole "
+        "dataset for the specified tiling scheme (tile matrix set)"
+    ),
+    context_settings=dict(
+        ignore_unknown_options=True,
+        allow_extra_args=True,
+    ),
+)
+@click.option(
+    "--tile_matrix_set_id",
+    required=True,
+    help=("Identifier for a supported" "TileMatrixSet"),
+)
+@click.option(
+    "-f",
+    default="json",
+    help="The format of the response. Accepted values are 'json' or 'html'.",
+)
+@click.pass_context
+def get_map_tile_matrix_set(ctx, tile_matrix_set_id, f):
+
+    options = parse_options(ctx)
+    click.echo(
+        printer(
+            ctx,
+            maps_obj.get_map_tile_matrix_set(
+                tile_matrix_set_id=tile_matrix_set_id, f=f, **options
+            ),
+        )
+    )
+
+
+@click.command(
+    "get_map_tiles",
+    short_help=("Retrieve the list of all default map tilesets for the whole dataset"),
+)
+@click.option(
+    "-f",
+    default="json",
+    help="The format of the response. Accepted values are 'json' or 'html'.",
+)
+@click.pass_context
+def get_map_tiles(ctx, f):
+
+    click.echo(
+        printer(
+            ctx,
+            maps_obj.get_map_tiles(f=f),
+        )
+    )
