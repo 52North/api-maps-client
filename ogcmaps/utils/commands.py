@@ -724,14 +724,27 @@ def styled_map_tiles_matrix(
 @click.command(
     "get_map",
     short_help="Retrieve a default map of the whole dataset.",
+    context_settings=dict(
+        ignore_unknown_options=True,
+        allow_extra_args=True,
+    ),
 )
 @click.option("--file_name", required=True, help="Name of file to save the map image.")
+@click.option(
+    "-f",
+    default="png",
+    help=(
+        "The format of the map response (e.g. png). Accepted values "
+        "are 'png', 'jpg' or 'tiff' (GeoTIFF)."
+    ),
+)
 @click.pass_context
-def get_map(ctx, file_name):
+def get_map(ctx, file_name, f):
 
+    options = parse_options(ctx)
     click.echo(
         printer(
             ctx,
-            maps_obj.get_map(file_name=file_name),
+            maps_obj.get_map(file_name=file_name, f=f, **options),
         )
     )
