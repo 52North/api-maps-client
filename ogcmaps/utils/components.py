@@ -31,7 +31,7 @@ def write_image(endpoint, file_name, f) -> dict:
     file.write(map_data.content)
     file.close()
 
-    return {"status": "success", "file name": f"{file_name}"}
+    return {"status": "success", "fileName": f"{file_name}"}
 
 
 def get_data(endpoint, response_format):
