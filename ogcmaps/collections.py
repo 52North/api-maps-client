@@ -827,6 +827,7 @@ def get_collection_styled_map_tile(
         tile_matrix=tile_matrix,
         tile_row=tile_row,
         tile_col=tile_col,
+        f=f,
     )
     endpoint = uri(get_collection_styled_map_tile, keys, **kwargs)
     if next(iter(endpoint)) == "endpoint":

@@ -143,3 +143,61 @@ def test_get_collection_map_tile_matrix(get_collection_map_tile_matrix_keys):
     assert set(get_collection_map_tile_matrix_keys).issubset(
         response.keys()
     ), "All keys should be in the response"
+
+
+@fixture
+def get_collection_map_tile_keys():
+    yield ["status", "fileName"]
+    file_path = Path("map.png")
+    file_path.unlink()
+
+
+def test_get_collection_map_tile(get_collection_map_tile_keys):
+    response = collections.get_collection_map_tile(
+        "blueMarble", "WebMercatorQuad", 5, 10, 15, "map.png"
+    )
+
+    assert isinstance(response, dict)
+    assert set(get_collection_map_tile_keys).issubset(
+        response.keys()
+    ), "All keys should be in the response"
+
+
+@fixture
+def get_collection_styled_tiles_keys():
+    yield ["links", "tilesets"]
+
+
+def test_get_collection_styled_tiles(get_collection_styled_tiles_keys):
+    response = collections.get_collection_styled_tiles("NaturalEarth", "continents")
+
+    assert isinstance(response, dict)
+    assert set(get_collection_styled_tiles_keys).issubset(
+        response.keys()
+    ), "All keys should be in the response"
+
+
+@fixture
+def collection_styled_map_tile_matrix_keys():
+    yield [
+        "title",
+        "tileMatrixSetURI",
+        "crs",
+        "dataType",
+        "tileMatrixSetLimits",
+        "links",
+        "style",
+        "layers",
+        "centerPoint",
+    ]
+
+
+def test_collection_styled_map_tile_matrix(collection_styled_map_tile_matrix_keys):
+    response = collections.collection_styled_map_tile_matrix(
+        "NaturalEarth", "continents", "CDBGlobalGrid"
+    )
+
+    assert isinstance(response, dict)
+    assert set(collection_styled_map_tile_matrix_keys).issubset(
+        response.keys()
+    ), "All keys should be in the response"
