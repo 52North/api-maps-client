@@ -201,3 +201,21 @@ def test_collection_styled_map_tile_matrix(collection_styled_map_tile_matrix_key
     assert set(collection_styled_map_tile_matrix_keys).issubset(
         response.keys()
     ), "All keys should be in the response"
+
+
+@fixture
+def get_collection_styled_map_tile_keys():
+    yield ["status", "fileName"]
+    file_path = Path("map.png")
+    file_path.unlink()
+
+
+def test_get_collection_styled_map_tile(get_collection_styled_map_tile_keys):
+    response = collections.get_collection_styled_map_tile(
+        "NaturalEarth", "continents", "CDBGlobalGrid", -2, 100, 100, "map.png"
+    )
+
+    assert isinstance(response, dict)
+    assert set(get_collection_styled_map_tile_keys).issubset(
+        response.keys()
+    ), "All keys should be in the response"
