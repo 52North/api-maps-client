@@ -20,7 +20,6 @@ Jinja2==3.1.2
 keyring==23.9.3
 MarkupSafe==2.1.1
 more-itertools==8.14.0
-ogcmaps @ file:///Users/prakhargurunani/dev/api-maps-client
 packaging==21.3
 pep517==0.13.0
 pkginfo==1.8.3
