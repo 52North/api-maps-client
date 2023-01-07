@@ -80,7 +80,7 @@ def get_collection_style_keys():
 
 
 def test_get_collection_style(get_collection_style_keys):
-    response = collections.get_collection_style("NaturalEarth", "continents")
+    response = collections.get_collection_style("NaturalEarth", "default")
 
     assert isinstance(response, dict)
     assert set(get_collection_style_keys).issubset(
@@ -136,7 +136,7 @@ def get_collection_map_tile_matrix_keys():
 
 def test_get_collection_map_tile_matrix(get_collection_map_tile_matrix_keys):
     response = collections.get_collection_map_tile_matrix(
-        "NaturalEarth", "CDBGlobalGrid"
+        "NaturalEarth", "CDB1GlobalGrid"
     )
 
     assert isinstance(response, dict)
@@ -169,7 +169,7 @@ def get_collection_styled_tiles_keys():
 
 
 def test_get_collection_styled_tiles(get_collection_styled_tiles_keys):
-    response = collections.get_collection_styled_tiles("NaturalEarth", "continents")
+    response = collections.get_collection_styled_tiles("NaturalEarth", "default")
 
     assert isinstance(response, dict)
     assert set(get_collection_styled_tiles_keys).issubset(
@@ -194,7 +194,7 @@ def collection_styled_map_tile_matrix_keys():
 
 def test_collection_styled_map_tile_matrix(collection_styled_map_tile_matrix_keys):
     response = collections.collection_styled_map_tile_matrix(
-        "NaturalEarth", "continents", "CDBGlobalGrid"
+        "NaturalEarth", "default", "CDB1GlobalGrid"
     )
 
     assert isinstance(response, dict)
