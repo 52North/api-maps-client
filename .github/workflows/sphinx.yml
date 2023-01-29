@@ -12,6 +12,12 @@ jobs:
       - name: Sphinx build
         run: |
           sphinx-build docs/source _build
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build files
+          path: |
+            _build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
