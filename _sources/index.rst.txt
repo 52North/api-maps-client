@@ -1,0 +1,21 @@
+.. OGC Maps API Client documentation master file, created by
+   sphinx-quickstart on Mon Jul  4 01:46:28 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to OGC Maps API Client's documentation!
+===============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   ogcmaps
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

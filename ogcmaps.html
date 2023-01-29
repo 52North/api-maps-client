@@ -1,0 +1,1386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ogcmaps package &mdash; OGC Maps API Client 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to OGC Maps API Client’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> OGC Maps API Client
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ogcmaps package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ogcmaps.collections">ogcmaps.collections module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ogcmaps.conformance">ogcmaps.conformance module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ogcmaps.landing">ogcmaps.landing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ogcmaps.maps">ogcmaps.maps module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ogcmaps.styles">ogcmaps.styles module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OGC Maps API Client</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ogcmaps package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ogcmaps.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="ogcmaps-package">
+<h1>ogcmaps package<a class="headerlink" href="#ogcmaps-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-ogcmaps.collections">
+<span id="ogcmaps-collections-module"></span><h2>ogcmaps.collections module<a class="headerlink" href="#module-ogcmaps.collections" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.collection_styled_map_tile_matrix">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">collection_styled_map_tile_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.collection_styled_map_tile_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the map tileset metadata for the specified collection, style and tiling
+scheme (tile matrix set).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style</p></li>
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Description of the tileset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the description of a collection available from this service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Information about a particular collection of (mostly geospatial) data
+available from this API. The collection is accessible via one or more OGC
+API set of specifications, for which a link to relevant accessible
+resources, e.g. <code class="docutils literal notranslate"><span class="pre">/collections/{collectionId}/(items,</span> <span class="pre">coverage,</span> <span class="pre">map,</span> <span class="pre">tiles...)</span></code>
+is contained in the response, with the corresponding relation type, as well
+as key information about the collection. This information includes:</p>
+<ul class="simple">
+<li><p>A local identifier for the collection that is unique for the dataset.</p></li>
+<li><p>A list of coordinate reference systems (CRS) in which data may be returned
+by the server. The first CRS is the default coordinate reference system (the
+default is always WGS 84 with axis order longitude/latitude).</p></li>
+<li><p>An optional title and description for the collection.</p></li>
+<li><p>An optional extent that can be used to provide an indication of the
+spatial and temporal extent of the collection - typically derived from the
+data.</p></li>
+<li><p>For collections accessible via the Features or Records API, an optional
+indicator about the type of the items in the collection (the default value, if
+the indicator is not provided, is ‘feature’).</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_map">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a map for the specified collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>bbox</strong> (<em>array</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – <p>Only features that have a geometry that intersects
+the bounding box are selected. The bounding box is provided as four or six
+numbers, depending on whether the coordinate reference system includes a
+vertical axis (height or depth):</p>
+<ul>
+<li><p>Lower left corner, coordinate axis 1</p></li>
+<li><p>Lower left corner, coordinate axis 2</p></li>
+<li><p>Minimum value, coordinate axis 3 (optional)</p></li>
+<li><p>Upper right corner, coordinate axis 1</p></li>
+<li><p>Upper right corner, coordinate axis 2</p></li>
+<li><p>Maximum value, coordinate axis 3 (optional)</p></li>
+</ul>
+<p>The coordinate reference system of the values is WGS 84 longitude/latitude
+(<a class="reference external" href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a>) unless a different coordinate
+reference system is specified in the parameter bbox-crs. For WGS 84
+longitude/latitude the values are in most cases the sequence of minimum
+longitude, minimum latitude, maximum longitude and maximum latitude.
+However, in cases where the box spans the antimeridian the first value
+(west-most box edge) is larger than the third value (east-most box edge). If
+the vertical axis is included, the third and the sixth number are the bottom
+and the top of the 3-dimensional bounding box. If a feature has multiple
+spatial geometry properties, it is the decision of the server whether only a
+single spatial geometry property is used to determine the extent or all
+relevant geometries.</p>
+</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>bbox-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified bbox</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the map in pixel. If omitted and height is
+specified, defaults to the width maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em>, </em><em>optional</em>) – Height of the map in pixel. If omitted and width is
+specified, defaults to the height maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and file name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_map_tile">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_map_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_map_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a map tile from the specified collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>tile_matrix</strong> (<em>str</em>) – <p>Identifier selecting one of the scales defined in the
+TileMatrixSet and representing the scaleDenominator the tile. For example,
+Ireland is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 5</cite></p>
+</p></li>
+<li><p><strong>tile_row</strong> (<em>int</em>) – <p>Row index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 10</cite></p>
+</p></li>
+<li><p><strong>tile_col</strong> (<em>int</em>) – <p>Column index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>, <code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 15</cite></p>
+</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and file name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_map_tile_matrix">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_map_tile_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_map_tile_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a map tile set metadata for the specified collection and tiling scheme
+(tile matrix set)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Description of the tileset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_map_tiles">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_map_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_map_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of all map tilesets for specified collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of available tilesets.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_style">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_style</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the style data for a style in a collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Style data of a particular style</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_styled_map">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_styled_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_styled_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a map for a specified collection and style.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>bbox</strong> (<em>array</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – <p>Only features that have a geometry that intersects
+the bounding box are selected. The bounding box is provided as four or six
+numbers, depending on whether the coordinate reference system includes a
+vertical axis (height or depth):</p>
+<ul>
+<li><p>Lower left corner, coordinate axis 1</p></li>
+<li><p>Lower left corner, coordinate axis 2</p></li>
+<li><p>Minimum value, coordinate axis 3 (optional)</p></li>
+<li><p>Upper right corner, coordinate axis 1</p></li>
+<li><p>Upper right corner, coordinate axis 2</p></li>
+<li><p>Maximum value, coordinate axis 3 (optional)</p></li>
+</ul>
+<p>The coordinate reference system of the values is WGS 84 longitude/latitude
+(<a class="reference external" href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a>) unless a different coordinate
+reference system is specified in the parameter bbox-crs. For WGS 84
+longitude/latitude the values are in most cases the sequence of minimum
+longitude, minimum latitude, maximum longitude and maximum latitude.
+However, in cases where the box spans the antimeridian the first value
+(west-most box edge) is larger than the third value (east-most box edge). If
+the vertical axis is included, the third and the sixth number are the bottom
+and the top of the 3-dimensional bounding box. If a feature has multiple
+spatial geometry properties, it is the decision of the server whether only a
+single spatial geometry property is used to determine the extent or all
+relevant geometries.</p>
+</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>bbox-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified bbox</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the map in pixel. If omitted and height is
+specified, defaults to the width maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em>, </em><em>optional</em>) – Height of the map in pixel. If omitted and width is
+specified, defaults to the height maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and file name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_styled_map_tile">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_styled_map_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_styled_map_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a map tile for a specified collection and style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style</p></li>
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>tile_matrix</strong> (<em>str</em>) – <p>Identifier selecting one of the scales defined in the
+TileMatrixSet and representing the scaleDenominator the tile. For example,
+Ireland is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 5</cite></p>
+</p></li>
+<li><p><strong>tile_row</strong> (<em>int</em>) – <p>Row index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 10</cite></p>
+</p></li>
+<li><p><strong>tile_col</strong> (<em>int</em>) – <p>Column index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>, <code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 15</cite></p>
+</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and file name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_styled_tiles">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_styled_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_styled_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of styled map tilesets for the specified collection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of available tilesets</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.get_collection_styles">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">get_collection_styles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.get_collection_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the list of all styles for a particular collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_id</strong> (<em>str</em>) – Local identifier of a collection</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of styles and the style data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.collections.metadata">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.collections.</span></span><span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.collections.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the list of geospatial data collections available from this service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>bbox</strong> (<em>array</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – <p>Only features that have a geometry that intersects
+the bounding box are selected. The bounding box is provided as four or six
+numbers,depending on whether the coordinate reference system includes a
+vertical axis (height or depth):</p>
+<ul>
+<li><p>Lower left corner, coordinate axis 1</p></li>
+<li><p>Lower left corner, coordinate axis 2</p></li>
+<li><p>Minimum value, coordinate axis 3 (optional)</p></li>
+<li><p>Upper right corner, coordinate axis 1</p></li>
+<li><p>Upper right corner, coordinate axis 2</p></li>
+<li><p>Maximum value, coordinate axis 3 (optional)</p></li>
+</ul>
+<p>The coordinate reference system of the values is WGS 84 longitude/
+latitude (<a class="reference external" href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a>) unless a
+different coordinate reference system is specified in the parameter
+<code class="docutils literal notranslate"><span class="pre">bbox-crs</span></code>. For WGS 84 longitude/latitude the values are in most cases
+the sequence of minimum longitude, minimum latitude, maximum longitude and
+maximum latitude. However, in cases where the box spans the antimeridian
+the first value (west-most box edge) is larger than the third value
+(east-most box edge). If the vertical axis is included, the third and the
+sixth number are the bottom and the top of the 3-dimensional bounding box.
+If a feature has multiple spatial geometry properties, it is the decision
+of the server whether only a single spatial geometry property is used to
+determine the extent or all relevant geometries.</p>
+</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The optional limit parameter limits the number of
+collections that are presented in the response document. Only items are
+counted that are on the first level of the collection in the response
+document. Nested objects contained within the explicitly requested items
+shall not be counted.</p>
+<ul>
+<li><p>Minimum = 1 * Maximum = 10000 * Default = 10</p></li>
+</ul>
+<p><cite>Default value : 10</cite></p>
+</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The collections of (mostly geospatial) data available from this API.
+The dataset contains one or more collections. This resource provides
+information about and access to the collections. The response contains the
+list of collections. Each collection is accessible via one or more OGC API
+set of specifications, for which a link to relevant accessible resources,
+e.g. <code class="docutils literal notranslate"><span class="pre">/collections/{collectionId}/(items,</span> <span class="pre">coverage,</span> <span class="pre">map,</span> <span class="pre">tiles...)</span></code> is
+provided, with the corresponding relation type, as well as key information
+about the collection. This information includes:</p>
+<ul class="simple">
+<li><p>A local identifier for the collection that is unique for the dataset.</p></li>
+<li><p>A list of coordinate reference systems (CRS) in which data may be returned by
+the server. The first CRS is the default coordinate reference system (the
+default is always WGS 84 with axis order longitude/latitude).</p></li>
+<li><p>An optional title and description for the collection.</p></li>
+<li><p>An optional extent that can be used to provide an indication of the spatial
+and temporal extent of the collection - typically derived from the data.</p></li>
+<li><p>For collections accessible via the Features or Records API, an optional
+indicator about the type of the items in the collection (the default value, if
+the indicator is not provided, is ‘feature’).</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ogcmaps.conformance">
+<span id="ogcmaps-conformance-module"></span><h2>ogcmaps.conformance module<a class="headerlink" href="#module-ogcmaps.conformance" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.conformance.metadata">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.conformance.</span></span><span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.conformance.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the set of OGC API conformance classes that are supported by this
+service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The URIs of all conformance classes supported by the server</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ogcmaps.landing">
+<span id="ogcmaps-landing-module"></span><h2>ogcmaps.landing module<a class="headerlink" href="#module-ogcmaps.landing" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.landing.metadata">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.landing.</span></span><span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.landing.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the OGC API landing page for this service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Links to the API definition, the conformance statements
+and to the feature collections in the dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ogcmaps.maps">
+<span id="ogcmaps-maps-module"></span><h2>ogcmaps.maps module<a class="headerlink" href="#module-ogcmaps.maps" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.maps.get_map">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.maps.</span></span><span class="sig-name descname"><span class="pre">get_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.maps.get_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a default map of the whole dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>bbox</strong> (<em>array</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – <p>Only features that have a geometry that intersects
+the bounding box are selected. The bounding box is provided as four or six
+numbers, depending on whether the coordinate reference system includes a
+vertical axis (height or depth):</p>
+<ul>
+<li><p>Lower left corner, coordinate axis 1</p></li>
+<li><p>Lower left corner, coordinate axis 2</p></li>
+<li><p>Minimum value, coordinate axis 3 (optional)</p></li>
+<li><p>Upper right corner, coordinate axis 1</p></li>
+<li><p>Upper right corner, coordinate axis 2</p></li>
+<li><p>Maximum value, coordinate axis 3 (optional)</p></li>
+</ul>
+<p>The coordinate reference system of the values is WGS 84 longitude/latitude
+(<a class="reference external" href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a>) unless a different coordinate
+reference system is specified in the parameter bbox-crs. For WGS 84
+longitude/latitude the values are in most cases the sequence of minimum
+longitude, minimum latitude, maximum longitude and maximum latitude.
+However, in cases where the box spans the antimeridian the first value
+(west-most box edge) is larger than the third value (east-most box edge). If
+the vertical axis is included, the third and the sixth number are the bottom
+and the top of the 3-dimensional bounding box. If a feature has multiple
+spatial geometry properties, it is the decision of the server whether only a
+single spatial geometry property is used to determine the extent or all
+relevant geometries.</p>
+</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>bbox-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified bbox</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the map in pixel. If omitted and height is
+specified, defaults to the width maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em>, </em><em>optional</em>) – Height of the map in pixel. If omitted and width is
+specified, defaults to the height maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and File name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.maps.get_map_tile">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.maps.</span></span><span class="sig-name descname"><span class="pre">get_map_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.maps.get_map_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a default map tile of the whole dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>tile_matrix</strong> (<em>str</em>) – <p>Identifier selecting one of the scales defined in the
+TileMatrixSet and representing the scaleDenominator the tile. For example,
+Ireland is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 5</cite></p>
+</p></li>
+<li><p><strong>tile_row</strong> (<em>int</em>) – <p>Row index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 10</cite></p>
+</p></li>
+<li><p><strong>tile_col</strong> (<em>int</em>) – <p>Column index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>, <code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 15</cite></p>
+</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and file name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.maps.get_map_tile_matrix_set">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.maps.</span></span><span class="sig-name descname"><span class="pre">get_map_tile_matrix_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.maps.get_map_tile_matrix_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a default map tileset of the whole dataset for the specified tiling
+scheme (tile matrix set)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Description of the tileset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.maps.get_map_tiles">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.maps.</span></span><span class="sig-name descname"><span class="pre">get_map_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.maps.get_map_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the list of all default map tilesets for the whole dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of available tilesets</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ogcmaps.styles">
+<span id="ogcmaps-styles-module"></span><h2>ogcmaps.styles module<a class="headerlink" href="#module-ogcmaps.styles" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.styles.get_styled_map">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.styles.</span></span><span class="sig-name descname"><span class="pre">get_styled_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.styles.get_styled_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a styled map of the whole dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>bbox</strong> (<em>array</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – <p>Only features that have a geometry that intersects
+the bounding box are selected. The bounding box is provided as four or six
+numbers, depending on whether the coordinate reference system includes a
+vertical axis (height or depth):</p>
+<ul>
+<li><p>Lower left corner, coordinate axis 1</p></li>
+<li><p>Lower left corner, coordinate axis 2</p></li>
+<li><p>Minimum value, coordinate axis 3 (optional)</p></li>
+<li><p>Upper right corner, coordinate axis 1</p></li>
+<li><p>Upper right corner, coordinate axis 2</p></li>
+<li><p>Maximum value, coordinate axis 3 (optional)</p></li>
+</ul>
+<p>The coordinate reference system of the values is WGS 84 longitude/latitude
+(<a class="reference external" href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a>) unless a different coordinate
+reference system is specified in the parameter bbox-crs. For WGS 84
+longitude/latitude the values are in most cases the sequence of minimum
+longitude, minimum latitude, maximum longitude and maximum latitude.
+However, in cases where the box spans the antimeridian the first value
+(west-most box edge) is larger than the third value (east-most box edge). If
+the vertical axis is included, the third and the sixth number are the bottom
+and the top of the 3-dimensional bounding box. If a feature has multiple
+spatial geometry properties, it is the decision of the server whether only a
+single spatial geometry property is used to determine the extent or all
+relevant geometries.</p>
+</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>bbox-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified bbox</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the map in pixel. If omitted and height is
+specified, defaults to the width maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em>, </em><em>optional</em>) – Height of the map in pixel. If omitted and width is
+specified, defaults to the height maintaining a 1:1 aspect ratio. If both
+width and height are omitted, the server will select a default dimensions.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and File name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.styles.get_styled_map_tile">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.styles.</span></span><span class="sig-name descname"><span class="pre">get_styled_map_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ogcmaps.styles.get_styled_map_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a styled map tiles</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style</p></li>
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>tile_matrix</strong> (<em>str</em>) – <p>Identifier selecting one of the scales defined in the
+TileMatrixSet and representing the scaleDenominator the tile. For example,
+Ireland is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 5</cite></p>
+</p></li>
+<li><p><strong>tile_row</strong> (<em>int</em>) – <p>Row index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code> and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 10</cite></p>
+</p></li>
+<li><p><strong>tile_col</strong> (<em>int</em>) – <p>Column index of the tile on the selected TileMatrix. It cannot
+exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland
+is fully within the Tile at WebMercatorQuad <code class="docutils literal notranslate"><span class="pre">tileMatrix=5</span></code>, <code class="docutils literal notranslate"><span class="pre">tileRow=10</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tileCol=15</span></code>.</p>
+<p><cite>Example : 15</cite></p>
+</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Name of file to save the map image</p></li>
+<li><p><strong>datetime</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Either a date-time or an interval, half-bounded or
+bounded. Date and time expressions adhere to RFC 3339. Half-bounded
+intervals are expressed using double-dots.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A date-time: “2018-02-12T23:20:50Z”</p></li>
+<li><p>A bounded interval: “2018-02-12T00:00:00Z/2018-03-18T12:31:12Z”</p></li>
+<li><p>Half-bounded intervals: “2018-02-12T00:00:00Z/..” or “../
+2018-03-18T12:31:12Z”</p></li>
+</ul>
+</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The collections that should be included in
+the response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>subset</strong> (<em>array</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Retrieve only part of the data by slicing or
+trimming along one or more axis For trimming: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({low}:{high})</span></code>
+(preserves dimensionality) An asterisk <code class="docutils literal notranslate"><span class="pre">(*)</span></code> can be used instead of
+<code class="docutils literal notranslate"><span class="pre">{low}</span></code> or <code class="docutils literal notranslate"><span class="pre">{high}</span></code> to indicate the minimum/maximum value. For
+slicing: <code class="docutils literal notranslate"><span class="pre">{axisAbbrev}({value})</span></code> (reduces dimensionality).</p></li>
+<li><p><strong>crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Reproject the output to the given crs</p></li>
+<li><p><strong>subset-crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Crs for the specified subset</p></li>
+<li><p><strong>bgcolor</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Web color name or hexadecimal <cite>0x[AA]RRGGBB</cite> color
+value for the background color (default to <cite>0x9C9C9C</cite> gray). If alpha is not
+specified, full opacity is assumed.</p>
+<p><cite>Default value : 0xFFFFFF</cite></p>
+</p></li>
+<li><p><strong>transparent</strong> (<em>boolean</em><em>, </em><em>optional</em>) – <p>Background transparency of map (default=true).</p>
+<p><cite>Default value : true</cite></p>
+</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the map response (e.g. png). Accepted values
+are ‘png’, ‘jpg’ or ‘tiff’ (GeoTIFF).</p>
+<p><cite>Available values : png, jpg, tiff</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status message and file name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.styles.get_styled_map_tiles">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.styles.</span></span><span class="sig-name descname"><span class="pre">get_styled_map_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.styles.get_styled_map_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the list of styled map tilesets for the whole dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of available tilesets</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ogcmaps.styles.styled_map_tiles_matrix">
+<span class="sig-prename descclassname"><span class="pre">ogcmaps.styles.</span></span><span class="sig-name descname"><span class="pre">styled_map_tiles_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_matrix_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ogcmaps.styles.styled_map_tiles_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a styled map tileset of the whole dataset for the specified tiling
+scheme (tile matrix set)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>style_id</strong> (<em>str</em>) – An identifier representing a specific style</p></li>
+<li><p><strong>tile_matrix_set_id</strong> (<em>str</em>) – Identifier for a supported TileMatrixSet</p></li>
+<li><p><strong>collections</strong> (<em>array</em><em>[</em><em>str</em><em>]</em>) – The collections that should be included in the
+response. The parameter value is a comma-separated list of collection
+identifiers. If the parameters is missing, some or all collections will be
+included. The collection will be rendered in the order specified, with the
+last one showing on top, unless the priority is overridden by styling rules.</p></li>
+<li><p><strong>f</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The format of the response. If no value is provided, the
+accept header is used to determine the format. Accepted values are ‘json’ or
+‘html’.</p>
+<p><cite>Available values : json, html</cite></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Description of the tileset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If parameter is invalid</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to OGC Maps API Client’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, 52°North.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
