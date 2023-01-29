@@ -4,14 +4,6 @@ ogcmaps package
 Submodules
 ----------
 
-ogcmaps.cli module
-------------------
-
-.. automodule:: ogcmaps.cli
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 ogcmaps.collections module
 --------------------------
 
@@ -48,14 +40,6 @@ ogcmaps.styles module
 ---------------------
 
 .. automodule:: ogcmaps.styles
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: ogcmaps
    :members:
    :undoc-members:
    :show-inheritance:
