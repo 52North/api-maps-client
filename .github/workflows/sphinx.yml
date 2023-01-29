@@ -15,7 +15,7 @@ jobs:
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: Build files
+          name: build
           path: |
             _build
       - name: Deploy
